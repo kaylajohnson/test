@@ -4,7 +4,7 @@ author: "Kayla Johnson"
 date: "3/16/2020"
 output: 
   html_document:
-  toc: true
+    toc: true
 ---
 
 ```{r include=FALSE}
@@ -17,18 +17,36 @@ library(rmarkdown)
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE)
 ```
 
-# Section 1
+# Section 1 {.tabset}
 
 ```{r}
 df <- tibble(method = c(LETTERS[1:10]),
              performance = runif(10))
+df2 <- tibble(method = c(LETTERS[11:20]),
+             performance = runif(10))
+df3 <- tibble(method = c(LETTERS[21:26]),
+             performance = runif(6))
 matrix <- matrix(runif(100), nrow = 10, ncol = 10)
 colnames(matrix) <- LETTERS[1:10]
 rownames(matrix) <- LETTERS[1:10]
 ```
 
+## First part of alphabet
+
 ```{r}
 kable(df)
+```
+
+## Second part of alphabet
+
+```{r}
+kable(df2)
+```
+
+## Last part of alphabet
+
+```{r}
+kable(df3)
 ```
 
 # Section 2
