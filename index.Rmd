@@ -64,7 +64,7 @@ kable(df3)
 ### header 3
 #### header 4 
 ##### header 5
-Normal body of text
+Normal body of text <span style="color: red;">with some red words</span> and <span style="color: #56B4E9;">some blue words</span>
 
 ```{r}
 pheatmap(matrix)
