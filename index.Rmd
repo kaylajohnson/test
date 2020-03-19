@@ -1,10 +1,9 @@
 ---
 title: "tmp"
-author: "Kayla Johnson"
-date: "3/16/2020"
 output: 
   html_document:
     toc: true
+    theme: flatly
 ---
 
 ```{r include=FALSE}
@@ -29,6 +28,17 @@ df3 <- tibble(method = c(LETTERS[21:26]),
 matrix <- matrix(runif(100), nrow = 10, ncol = 10)
 colnames(matrix) <- LETTERS[1:10]
 rownames(matrix) <- LETTERS[1:10]
+
+#https://bookdown.org/yihui/rmarkdown-cookbook/font-color.html
+#custom function to change color of Rmd text 
+colorize <- function(x, color) {
+  if (knitr::is_latex_output()) {
+    sprintf("\\textcolor{%s}{%s}", color, x)
+  } else if (knitr::is_html_output()) {
+    sprintf("<span style='color: %s;'>%s</span>", color, 
+      x)
+  } else x
+}
 ```
 
 ## First part of alphabet
@@ -50,15 +60,21 @@ kable(df3)
 ```
 
 # Section 2
+## header 2 
+### header 3
+#### header 4 
+##### header 5
+Normal body of text where we can possibly put `r colorize("some words in red", "red")`
+
 ```{r}
 pheatmap(matrix)
 ```
 
 # Section 3
+## `r colorize("color header test", "#56B4E9")`
 ```{r}
 df %>% 
   ggplot(aes(x = method, y = performance)) +
   geom_col() +
   theme_minimal()
 ```
-
