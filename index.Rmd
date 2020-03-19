@@ -64,7 +64,7 @@ kable(df3)
 ### header 3
 #### header 4 
 ##### header 5
-Normal body of text where we can possibly put `r colorize("some words in red", "red")`
+Normal body of text
 
 ```{r}
 pheatmap(matrix)
