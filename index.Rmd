@@ -71,7 +71,6 @@ pheatmap(matrix)
 ```
 
 # Section 3
-## `r colorize("color header test", "#56B4E9")`
 ```{r}
 df %>% 
   ggplot(aes(x = method, y = performance)) +
