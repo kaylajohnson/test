@@ -3,7 +3,6 @@ title: "tmp"
 output: 
   html_document:
     toc: true
-    theme: flatly
 ---
 
 ```{r include=FALSE}
@@ -64,7 +63,7 @@ kable(df3)
 ### header 3
 #### header 4 
 ##### header 5
-Normal body of text 
+Normal body of text `r colorize("some words in red", "red")`
 
 ```{r}
 pheatmap(matrix)
